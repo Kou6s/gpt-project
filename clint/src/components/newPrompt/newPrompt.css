@@ -1,0 +1,197 @@
+.newprompt {
+
+
+
+    .endChat{
+        padding-bottom: 150px;
+    }
+  .newForm {
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    background-color: #232130;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    box-shadow: -6px -4px 30px rgba(106, 110, 106, 0.477);
+
+    input[type="text"] {
+      flex: 1;
+      min-height: 40px;
+      padding: 10px;
+      background: none;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 14px;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+
+    /* Attachment icon stays white */
+    label {
+      flex-shrink: 0;
+      background: rgba(40, 29, 29, 0.588);
+      border-radius: 50%;
+      cursor: pointer;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+
+      img {
+        width: 18px;
+      }
+    }
+
+    /* Send button with gradient + hover glow */
+    button {
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #04ff04, #cc00f5);
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+
+      img {
+        width: 18px;
+        filter: invert(1);
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(137, 43, 226, 0.89),
+                    0 0 15px rgba(50, 205, 50, 0.933);
+      }
+    }
+  }
+}
+/* --- Stylish attachment button --- */
+.attachment-btn {
+  flex-shrink: 0;
+  /* background: linear-gradient(135deg, #88d588, #cc00f5); */
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  background-color: rgba(128, 169, 195, 0.929);
+}
+
+.attachment-btn img {
+  width: 18px;
+  filter: invert(1);
+}
+
+/* .attachment-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(137, 43, 226, 0.89),
+              0 0 15px rgba(50, 205, 50, 0.933);
+} */
+
+/* --- Image preview container --- */
+.image-preview-container {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  position: absolute;
+  bottom: 95px;
+  padding: 0 10px;
+  z-index: 5;
+}
+
+.preview-wrapper {
+  position: relative;
+  margin: 0 5px;
+}
+
+.image-preview {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #232130;
+}
+
+.remove-image-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #232130;
+  color: white;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.remove-image-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Base message styles */
+/* Base message styles */
+/* Base message styles */
+.message_user,
+.message {
+    max-width: 70%;             /* Limit width */
+    padding: 12px 20px;
+    line-height: 1.4;
+    position: relative;
+    margin-bottom: 100px;       /* Space below messages */
+    word-wrap: break-word;      /* Break long words */
+    overflow-wrap: break-word;  /* Extra safety */
+    white-space: pre-wrap;      /* Preserve line breaks */
+    
+}
+
+/* User message (right side) - transparent animated bubble */
+.message_user {
+    background: rgba(2, 23, 45, 0.478);   /* Semi-transparent */
+    color: white;
+    margin-left: auto;                  /* Push to right */
+    margin-right: 20px;
+    max-width: 50%;
+    border-radius: 5px;
+    padding: 12px 20px;
+    box-shadow: 0 0 10px rgba(1, 17, 32, 0.5);
+    backdrop-filter: blur(8px);         /* Glassy effect */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Add subtle pop animation on hover */
+
+
+/* AI messages - just plain text, no box */
+.message {
+    margin-left: 20px;    /* Push left */
+    margin-right: auto;
+    color: white;
+    background: none;
+    box-shadow: none;
+    border: none;
+}
+

@@ -1,0 +1,29 @@
+.rootlayout{
+    padding:16px 64px;
+    height: 100vh;
+display: flex;
+    flex-direction: column;
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       .kat{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+           font-weight: bold;
+            
+        }
+        img{
+            width: 32px;
+            height: 32px;
+        }
+        
+    }
+}
+main{
+    /* background-color: rgba(52, 248, 49, 0.816); */
+    flex: 1;
+    overflow: hidden;
+    
+}

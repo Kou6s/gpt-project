@@ -1,0 +1,136 @@
+.dashboardpage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .texts {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    gap: 50px;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      opacity: 0.8;
+
+      img {
+        width: 64px;
+        height: 64px;
+      }
+
+      h1 {
+        font-size: 64px;
+        font-weight: bold;
+        background: linear-gradient(to right, #32CD32, #8A2BE2);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    }
+
+    .options {
+      width: 100%;
+      display: flex;
+      align-items: stretch; /* makes all equal height */
+      justify-content: space-between;
+      gap: 50px;
+
+      .option {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        font-weight: 300;
+        font-size: 14px;
+        padding: 20px;
+        border: 1px solid rgba(138, 43, 226, 0.2);
+        border-radius: 20px;
+        background-color: rgba(50, 205, 50, 0.1);
+        min-height: 150px; /* uniform height */
+        box-sizing: border-box;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+
+        img {
+          width: 40px;
+          height: 40px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+.formContainer {
+  margin-top: auto;
+  width: 650px;
+  background-color: #232130;
+  border-radius: 30px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center; /* ✅ Center vertically */
+  box-shadow: -6px -4px 30px rgba(106, 110, 106, 0.477);
+}
+
+.formContainer form {
+  width: 100%;
+  display: flex;
+  align-items: center; /* ✅ Center button & box on same line */
+  gap: 10px;
+}
+
+.formContainer textarea {
+  flex: 1;
+  min-height: 40px;
+  max-height: 150px;
+  padding: 10px;
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  resize: none;
+  overflow-y: auto;
+  line-height: 1.4;
+  font-family: inherit;
+}
+
+.formContainer textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.formContainer button {
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #04ff04, #cc00f5);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center; /* ✅ Button icon perfectly centered */
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.formContainer button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(137, 43, 226, 0.89),
+              0 0 15px rgba(50, 205, 50, 0.933);
+}
+
+.formContainer button img {
+  width: 18px;
+  filter: invert(1);
+}
+
+
+
+}
