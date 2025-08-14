@@ -6,9 +6,9 @@ const ChatList = () => {
         <div className="chatList">
             <span className="title">DASHBOARD</span>
 
-            <Link to="">Create a new chat</Link>
+            <Link to="/dashboard/chats/324343">Create a new chat</Link>
             <Link to="">Explore KAT AI</Link>
-            <Link to="">Contact</Link>
+            <Link to="https://github.com/Kou6s/gpt-project">Contact</Link>
 
             <hr />
 <span className='title'> RECENT CHARTS

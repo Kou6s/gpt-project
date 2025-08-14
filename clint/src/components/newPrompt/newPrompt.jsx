@@ -5,7 +5,8 @@ import "./newPrompt.css";
 import model from "../../lib/gemini";
 import Markdown from "react-markdown";
 
-const NewPrompt = () => {
+const NewPrompt = ({prevContent}) => {
+  const [startText , setStartText] = useState(localStorage.getItem("prevTextValue")||"");
   const [messages, setMessages] = useState([]); // { id, type: 'user'|'ai', text, img }
   const [img, setImg] = useState({ isLoading: false, error: "", dbData: {} });
   const [previewURL, setPreviewURL] = useState(null);
@@ -36,6 +37,8 @@ const NewPrompt = () => {
   // Send text to Gemini AI
   const sendToAI = async (text) => {
     try {
+      setStartText('');
+      setPreviewURL(null)
       const result = await model.models.generateContent({
         model: "gemini-2.5-flash",
         contents: [{ text }],
@@ -199,6 +202,11 @@ const NewPrompt = () => {
         <input
           type="text"
           name="text"
+          // defaultValue={}
+          value={startText}
+          onChange={(event)=>{
+            setStartText(event.target.value)
+          }}
           placeholder={img.isLoading ? "Uploading..." : "Ask anything..."}
           autoComplete="off"
           disabled={img.isLoading || isSending}

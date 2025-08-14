@@ -1,26 +1,36 @@
+import { useState } from 'react';
 import './DashboardPage.css';
+import { useNavigate } from 'react-router-dom';
 
 const DashboardPage = () => {
+  const navigate = useNavigate();  
+  const [currentText , setCurrentText] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit =  (e) => {
     e.preventDefault();
     const text = e.target.text.value.trim();
+   
     if (!text) return;
+    //  console.log(text);
+    localStorage.setItem("prevTextValue", text);
+    navigate("/dashboard/chats/45678");
+    // try {
+    //   // await fetch("http://localhost:3000/a  pi/chats", {
+    //   //   method: "POST",
+    //   //   headers: {
+    //   //     "Content-Type": "application/json",
+    //   //   },
+    //   //   body: JSON.stringify({ text }),
+    //   // });
 
-    try {
-      await fetch("http://localhost:3000/api/chats", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ text }),
-      });
 
-      // Optionally reset the textarea after sending
-      e.target.reset();
-    } catch (error) {
-      console.error("Error sending chat:", error);
-    }
+    //   // Optionally reset the textarea after sending
+
+    // } catch (error) {
+    //   console.error("Error sending chat:", error);
+    // }finally{
+    //         e.target.reset();
+    // }
   };
 
   return (
@@ -32,7 +42,7 @@ const DashboardPage = () => {
         </div>
 
         <div className="options">
-          <div className="option">
+          <div className="option"onClick={()=>navigate('/dashboard/chats/56789')} >
             <img src="/chat.png" alt="Chat Icon" />
             <span>Create a New Chat</span>
           </div>
@@ -50,7 +60,9 @@ const DashboardPage = () => {
       {/* Chat input bar */}
       <div className="formContainer">
         <form onSubmit={handleSubmit}>
-          <textarea name="text" placeholder="Ask me anything..."></textarea>
+          <textarea name="text" placeholder="Ask me anything..." value={currentText} onChange={(e)=>{
+            setCurrentText(e.target.value);
+          }} ></textarea>
           <button type="submit">
             <img src="/arrow.png" alt="Send" />
           </button>
